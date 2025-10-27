@@ -1,0 +1,28 @@
+# LLMs.txt for https://ask.neosapien.xyz
+
+## Website Overview
+Ask Neo is a conversational AI application that serves as your "second brain" - an intelligent assistant that remembers every conversation and understands context across time. Built with Next.js 16, React 19, and TypeScript for modern web performance and user experience.
+
+## Site Structure
+- Home Page (`/`): Main chat interface with AI conversation capabilities
+- Chats Page (`/chats`): Chat history management and search functionality
+- Memories Page (`/memories`): Memory storage and retrieval system for insights
+- Authentication: Simple localStorage-based login system
+
+## Key Features
+- Conversational AI interface with real-time messaging
+- Memory system for persistent storage of conversations and insights
+- Multi-modal input support (text, voice recording, file attachments)
+- Full-text search across chat history and memories
+- Dark/light theme toggle with persistent storage
+- Responsive design with collapsible sidebar navigation
+- Voice recognition using Web Speech API
+- File upload and attachment capabilities
+
+## Contact Information
+- GitHub: https://github.com/NeoSapien-xyz/AskNeo-FE
+- Homepage: https://neosapien.xyz
+- Organization: NeoSapien Team
+
+## License
+MIT License
