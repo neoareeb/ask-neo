@@ -1,0 +1,47 @@
+{
+  "name": "ask-neo",
+  "version": "1.0.0",
+  "description": "Your Second Brain",
+  "keywords": [
+    "neosapien",
+    "second brain",
+    "ai",
+    "memory",
+    "conversation"
+  ],
+  "author": "NeoSapien Team <support@neosapien.xyz>",
+  "license": "MIT",
+  "homepage": "https://neosapien.xyz",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:NeoSapien-xyz/AskNeo-FE.git"
+  },
+  "scripts": {
+    "start": "next start",
+    "dev": "next dev",
+    "build": "next build",
+    "format": "npx prettier --write ."
+  },
+  "dependencies": {
+    "@vercel/analytics": "latest",
+    "autoprefixer": "^10.4.20",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.546.0",
+    "next": "16.0.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "postcss": "^8.5",
+    "prettier": "^3.6.2",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "prettier-plugin-tailwindcss": "^0.7.1",
+    "tailwindcss": "^4.1.9",
+    "typescript": "^5"
+  }
+}
