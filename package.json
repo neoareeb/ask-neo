@@ -23,6 +23,7 @@
     "format": "npx prettier --write ."
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.16",
     "@vercel/analytics": "latest",
     "autoprefixer": "^10.4.20",
     "clsx": "^2.1.1",
