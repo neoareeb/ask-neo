@@ -72,9 +72,9 @@ export default function MemoriesPage() {
           <ThemeToggle />
         </div>
 
-        <div className="flex-1 flex items-center justify-center p-8">
-          <div className="max-w-2xl w-full text-center">
-            <div className="mb-8">
+        <div className="flex-1 flex items-center justify-center p-8 overflow-visible">
+          <div className="max-w-2xl w-full text-center animate-fade-in-up">
+            <div className="mb-8 animate-fade-in-up-delayed">
               <p className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2">
                 Indexed Memories
               </p>
@@ -83,14 +83,14 @@ export default function MemoriesPage() {
               </h1>
             </div>
 
-            <div className="relative mb-6">
+            <div className="relative mb-6 animate-fade-in-up-delayed-2">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
               <input
                 type="text"
                 placeholder="Search your memories..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-20 py-3 rounded-full border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                className="w-full pl-10 pr-20 py-3 rounded-full border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 ease-out"
               />
               <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
                 <div className="bg-gray-100 dark:bg-white/20 px-2 py-1 rounded-full text-xs text-gray-600 dark:text-white border border-gray-200 dark:border-white/30 font-medium">
@@ -99,7 +99,7 @@ export default function MemoriesPage() {
               </div>
             </div>
             {filteredMemories.length === 0 ? (
-              <div className="text-center py-12">
+              <div className="text-center py-12 animate-fade-in-up">
                 <Brain className="w-16 h-16 text-gray-400 mx-auto mb-4" />
                 <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
                   No memories found
@@ -112,10 +112,11 @@ export default function MemoriesPage() {
               </div>
             ) : (
               <div className="space-y-3">
-                {filteredMemories.map((memory) => (
+                {filteredMemories.map((memory, index) => (
                   <div
                     key={memory.id}
-                    className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-4 cursor-pointer relative hover:border-primary transition-colors"
+                    className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-4 cursor-pointer relative hover:border-primary transition-all duration-300 ease-out animate-fade-in-up overflow-visible"
+                    style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <div className="flex items-start justify-between">
                       <div className="flex-1 min-w-0 text-left">
@@ -147,13 +148,13 @@ export default function MemoriesPage() {
                         </button>
 
                         {openMenuId === memory.id && (
-                          <div className="dropdown-menu absolute right-0 top-10 bg-white dark:bg-gray-900 rounded-lg shadow-xl border border-gray-200 dark:border-gray-800 py-1 z-10 min-w-[120px]">
+                          <div className="dropdown-menu absolute right-0 bottom-full mb-2 bg-white dark:bg-gray-900 rounded-lg shadow-xl border border-gray-200 dark:border-gray-800 py-2 z-20 min-w-[140px]">
                             <button
                               onClick={(e) => {
                                 e.stopPropagation();
                                 setOpenMenuId(null);
                               }}
-                              className="w-full flex items-center gap-3 px-4 py-2 text-sm text-gray-900 dark:text-white transition-colors hover:text-primary"
+                              className="w-full flex items-center gap-3 px-4 py-3 text-sm text-gray-900 dark:text-white transition-colors hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800"
                             >
                               <Edit3 className="w-4 h-4 transition-colors" />
                               <span className="transition-colors">Edit</span>
@@ -163,7 +164,7 @@ export default function MemoriesPage() {
                                 e.stopPropagation();
                                 setOpenMenuId(null);
                               }}
-                              className="w-full flex items-center gap-3 px-4 py-2 text-sm text-gray-900 dark:text-white transition-colors hover:text-primary"
+                              className="w-full flex items-center gap-3 px-4 py-3 text-sm text-gray-900 dark:text-white transition-colors hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800"
                             >
                               <Star className="w-4 h-4 transition-colors" />
                               <span className="transition-colors">Star</span>
@@ -173,7 +174,7 @@ export default function MemoriesPage() {
                                 e.stopPropagation();
                                 setOpenMenuId(null);
                               }}
-                              className="w-full flex items-center gap-3 px-4 py-2 text-sm text-red-600 hover:text-red-700 transition-colors group"
+                              className="w-full flex items-center gap-3 px-4 py-3 text-sm text-red-600 hover:text-red-700 transition-colors group hover:bg-red-50 dark:hover:bg-red-900/20"
                             >
                               <Trash2 className="w-4 h-4 text-red-500 group-hover:text-red-600 transition-colors" />
                               <span className="text-red-600 group-hover:text-red-700 transition-colors">

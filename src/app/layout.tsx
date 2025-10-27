@@ -1,3 +1,4 @@
+import PageTransition from "@/components/page-transition";
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -31,7 +32,7 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${inter.variable} font-sans antialiased`}
       >
-        {children}
+        <PageTransition>{children}</PageTransition>
         <Analytics />
         <Toaster position="top-right" />
       </body>

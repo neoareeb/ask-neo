@@ -80,15 +80,15 @@ export default function Home() {
         </div>
 
         {messages.length === 0 ? (
-          <div className="flex-1 flex flex-col items-center justify-center px-4 transition-all duration-500 ease-in-out">
-            <div className="max-w-2xl w-full space-y-8">
-              <div className="text-center">
-                <h1 className="text-2xl font-medium text-gray-900 dark:text-white mb-2">
+          <div className="flex-1 flex flex-col items-center justify-center px-4 transition-all duration-300 ease-out">
+            <div className="max-w-2xl w-full space-y-8 animate-fade-in-up">
+              <div className="text-center animate-fade-in-up-delayed">
+                <h1 className="text-2xl font-medium text-gray-900 dark:text-white mb-2 transition-colors duration-300">
                   Hey, Areeb, how may i help you?
                 </h1>
               </div>
 
-              <div className="w-full">
+              <div className="w-full animate-fade-in-up-delayed-2">
                 <ChatInput
                   onSendMessage={handleSendMessage}
                   isLoading={isLoading}
@@ -97,16 +97,18 @@ export default function Home() {
             </div>
           </div>
         ) : (
-          <div className="flex-1 flex flex-col transition-all duration-500 ease-in-out">
+          <div className="flex-1 flex flex-col transition-all duration-300 ease-out">
             <ChatContainer
               messages={messages}
               isLoading={isLoading}
               messagesEndRef={messagesEndRef}
             />
-            <ChatInput
-              onSendMessage={handleSendMessage}
-              isLoading={isLoading}
-            />
+            <div className="animate-slide-up">
+              <ChatInput
+                onSendMessage={handleSendMessage}
+                isLoading={isLoading}
+              />
+            </div>
           </div>
         )}
       </div>

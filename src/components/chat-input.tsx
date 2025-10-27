@@ -151,10 +151,10 @@ export default function ChatInput({
   };
 
   return (
-    <div className="bg-white center-grey sticky bottom-0 p-4">
+    <div className="bg-white center-grey sticky bottom-0 p-4 transition-all duration-300 ease-out">
       <div className="max-w-2xl mx-auto">
         {attachedFile && (
-          <div className="mb-3 p-3 center-grey rounded-lg border border-gray-200 dark:border-gray-700 flex items-center gap-3">
+          <div className="mb-3 p-3 center-grey rounded-lg border border-gray-200 dark:border-gray-700 flex items-center gap-3 animate-slide-up">
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium text-gray-900 dark:text-white truncate">
                 {attachedFile.name}
@@ -174,14 +174,14 @@ export default function ChatInput({
         )}
 
         <form onSubmit={handleSubmit}>
-          <div className="flex items-center gap-2 px-4 py-3 rounded-full center-grey border border-gray-200 dark:border-gray-700 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-all duration-200 shadow-sm">
+          <div className="flex items-center gap-2 px-4 py-3 rounded-full center-grey border border-gray-200 dark:border-gray-700 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-all duration-300 ease-out shadow-sm">
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
-              className="p-1.5 rounded-lg transition-colors flex-shrink-0 cursor-pointer group"
+              className="p-1.5 rounded-lg transition-all duration-200 ease-out flex-shrink-0 cursor-pointer group"
               title="Attach file"
             >
-              <Paperclip className="w-4 h-4 text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors" />
+              <Paperclip className="w-4 h-4 text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors duration-200" />
             </button>
             <input
               ref={fileInputRef}
@@ -196,7 +196,7 @@ export default function ChatInput({
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask anything"
-              className="flex-1 bg-transparent text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 outline-none text-sm py-1 resize-none min-h-[20px] max-h-32 overflow-y-auto"
+              className="flex-1 bg-transparent text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 outline-none text-sm py-1 resize-none min-h-[20px] max-h-32 overflow-y-auto transition-all duration-200 ease-out"
               disabled={isLoading}
               rows={1}
               onKeyDown={(e) => {
@@ -211,7 +211,7 @@ export default function ChatInput({
               type="button"
               onClick={handleVoiceClick}
               disabled={!isVoiceSupported}
-              className={`p-1.5 rounded-lg transition-colors flex-shrink-0 cursor-pointer group ${
+              className={`p-1.5 rounded-lg transition-all duration-200 ease-out flex-shrink-0 cursor-pointer group ${
                 !isVoiceSupported ? "opacity-50 cursor-not-allowed" : ""
               }`}
               title={
@@ -223,9 +223,9 @@ export default function ChatInput({
               }
             >
               <Mic
-                className={`w-4 h-4 transition-colors ${
+                className={`w-4 h-4 transition-all duration-200 ease-out ${
                   isRecording
-                    ? "text-red-500"
+                    ? "text-red-500 scale-110"
                     : "text-gray-500 dark:text-gray-400 group-hover:text-primary"
                 }`}
               />
@@ -234,10 +234,10 @@ export default function ChatInput({
             <button
               type="submit"
               disabled={(!input.trim() && !attachedFile) || isLoading}
-              className={`btn btn-primary p-2 rounded-full flex-shrink-0 cursor-pointer ${isLoading ? "loading" : ""} disabled:opacity-50 disabled:cursor-not-allowed`}
+              className={`btn btn-primary p-2 rounded-full flex-shrink-0 cursor-pointer transition-all duration-200 ease-out ${isLoading ? "loading" : ""} disabled:opacity-50 disabled:cursor-not-allowed`}
               title="Send message"
             >
-              <Send className="w-4 h-4 text-white" />
+              <Send className="w-4 h-4 text-white transition-transform duration-200 ease-out" />
             </button>
           </div>
         </form>

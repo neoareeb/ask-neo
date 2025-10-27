@@ -58,7 +58,7 @@ export default function ProfileDropdown({
 
   const baseItemClasses =
     "w-full flex items-center gap-2 px-3 py-2 text-sm rounded-xl transition-colors cursor-pointer group";
-  const iconClasses = "w-4 h-4 text-gray-500 dark:text-gray-400";
+  const iconClasses = "w-4 h-4 text-gray-500 dark:text-gray-400 flex-shrink-0";
 
   return (
     <div
@@ -66,7 +66,7 @@ export default function ProfileDropdown({
       className="absolute bottom-16 left-3 right-3 rounded-2xl border border-gray-200/80 dark:border-gray-700/60 bg-white/95 dark:bg-[#111111]/95 backdrop-blur-sm shadow-xl py-4 z-50"
     >
       <div className="px-3 pb-3">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm flex-shrink-0">
             <User className="w-4 h-4 text-white" />
           </div>
@@ -85,7 +85,7 @@ export default function ProfileDropdown({
           <Star
             className={`${iconClasses} group-hover:text-primary transition-colors`}
           />
-          <span className="flex-1 group-hover:text-primary transition-colors">
+          <span className="group-hover:text-primary transition-colors">
             Upgrade plan
           </span>
         </button>
@@ -94,7 +94,7 @@ export default function ProfileDropdown({
           <Settings
             className={`${iconClasses} group-hover:text-primary transition-colors`}
           />
-          <span className="flex-1 group-hover:text-primary transition-colors">
+          <span className="group-hover:text-primary transition-colors">
             Settings
           </span>
         </button>
@@ -105,7 +105,7 @@ export default function ProfileDropdown({
           <HelpCircle
             className={`${iconClasses} group-hover:text-primary transition-colors`}
           />
-          <span className="flex-1 group-hover:text-primary transition-colors">
+          <span className="group-hover:text-primary transition-colors">
             Help
           </span>
           <ChevronRight className="w-4 h-4 ml-auto text-gray-400 group-hover:text-primary transition-colors" />
@@ -115,8 +115,8 @@ export default function ProfileDropdown({
           onClick={handleLogout}
           className="w-full flex items-center gap-2 px-3 py-2 text-sm rounded-xl transition-colors cursor-pointer text-red-600 hover:text-red-700"
         >
-          <LogOut className="w-4 h-4 text-red-500" />
-          <span className="flex-1">Log out</span>
+          <LogOut className="w-4 h-4 text-red-500 flex-shrink-0" />
+          <span>Log out</span>
         </button>
       </div>
     </div>
